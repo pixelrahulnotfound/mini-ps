@@ -37,15 +37,15 @@ def intake_query() -> str:
         )
     )
     console.print("[bold]Enter trip details:[/bold]\n")
-    destination = Prompt.ask("Destination", default="Goa")
-    origin = Prompt.ask("Starting from", default="Hyderabad")
-    month = Prompt.ask("Travel month", default="December")
-    days = Prompt.ask("Number of days", default="5")
-    people = Prompt.ask("People", default="3")
-    budget = Prompt.ask("Total budget (INR)", default="75000")
-    interests = Prompt.ask("Interests", default="beaches, seafood, nightlife")
-    pace = Prompt.ask("Pace", choices=["relaxed", "moderate", "packed"], default="moderate")
-    stay = Prompt.ask("Stay style", choices=["budget", "mid-range", "luxury"], default="mid-range")
+    destination = Prompt.ask("Destination (eg. Goa)", default="Goa", show_default=False)
+    origin = Prompt.ask("Starting from (eg. Hyderabad)", default="Hyderabad", show_default=False)
+    month = Prompt.ask("Travel month (eg. December)", default="December", show_default=False)
+    days = Prompt.ask("Number of days (eg. 5)", default="5", show_default=False)
+    people = Prompt.ask("Number of people (eg. 3)", default="3", show_default=False)
+    budget = Prompt.ask("Total budget in INR (eg. 75000)", default="75000", show_default=False)
+    interests = Prompt.ask("Interests (eg. beaches, seafood, nightlife)", default="beaches, seafood, nightlife", show_default=False)
+    pace = Prompt.ask("Pace [relaxed/moderate/packed] (eg. moderate)", choices=["relaxed", "moderate", "packed"], default="moderate", show_choices=False, show_default=False)
+    stay = Prompt.ask("Stay style [budget/mid-range/luxury] (eg. mid-range)", choices=["budget", "mid-range", "luxury"], default="mid-range", show_choices=False, show_default=False)
     return (
         f"Plan a {days}-day trip to {destination} for {people} people, travelling from {origin} "
         f"in {month}. The total budget is ₹{budget}. Interests: {interests}. "
@@ -89,17 +89,29 @@ async def run(query: str, mcp_url: str | None = None) -> None:
     try:
         async with MCPClient(url) as mcp_client:
             agent = MiniPSAgent(mcp_client, settings=settings, trace=trace_event)
-            answer = await agent.run(query)
+            try:
+                answer = await agent.run(query)
+            except Exception as exc:
+                console.print(
+                    Panel(
+                        f"[bold red]LLM Request Failed:[/bold red]\n\n"
+                        f"{exc}\n\n"
+                        f"Check that your LLM endpoint is running at [bold]{settings.llm_base_url}[/bold]",
+                        title="LLM Connection Error",
+                        border_style="red",
+                    )
+                )
+                return
     except Exception as exc:
         console.print(
             Panel(
                 f"[bold red]Could not connect to MCP server.[/bold red]\n\n"
                 f"{exc}\n\nStart it with: [bold]python -m mcp_server.server[/bold]",
-                title="Connection Error",
+                title="MCP Connection Error",
                 border_style="red",
             )
         )
-        raise
+        return
     console.print()
     console.print(
         Panel(

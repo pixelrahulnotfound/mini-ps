@@ -1,177 +1,113 @@
 # Running mini-ps on Google Colab
 
-mini-ps uses two local processes in the Colab runtime:
+You can run mini-ps in Google Colab in two ways:
+1. **Full Colab Mode**: Run both the model and the CLI directly inside Colab.
+2. **Hybrid Mode**: Run the model on Colab GPU and connect to it from your local laptop CLI via a Cloudflare Tunnel.
 
-1. **llama.cpp** serves a quantized Qwen model through an OpenAI-compatible API.
-2. **mini-ps MCP server** serves the travel-planning tools over SSE.
+---
 
-The CLI connects to both. No paid API keys are required.
+## 1. Setup GPU in Colab
 
-## Requirements
+1. In the top menu, go to **Runtime** → **Change runtime type**.
+2. Select **T4 GPU** and click **Save**.
 
-- A copy of this repository on GitHub, or a ZIP upload.
-- Google Colab notebook environment.
-- Sufficient Colab RAM for the model (e.g. Qwen 2.5 7B Q4 or smaller 3B Q4).
+---
 
-## GPU Option
+## 2. Install Dependencies (Fast)
 
-To run on GPU in Colab, change the runtime:
-
-```text
-Runtime → Change runtime type → T4 GPU
-```
-
-Check GPU availability:
+Install the pre-built CUDA package and tunnel utility:
 
 ```python
-!nvidia-smi
+!pip install -q huggingface_hub "llama-cpp-python[server]" \
+  --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu122
+
+!wget -q -nc https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+!dpkg -i cloudflared-linux-amd64.deb > /dev/null 2>&1
 ```
 
-Install llama.cpp with CUDA support:
+---
 
-```python
-!pip uninstall -y llama-cpp-python
-!CMAKE_ARGS="-DGGML_CUDA=on" pip install -q --no-cache-dir --force-reinstall "llama-cpp-python[server]"
-```
+## 3. Download the Model
 
-Start llama.cpp on GPU:
-
-```python
-!nohup python -m llama_cpp.server \
-  --model "$MODEL_PATH" \
-  --model_alias qwen2.5-7b-instruct \
-  --host 127.0.0.1 \
-  --port 8080 \
-  --n_ctx 4096 \
-  --n_gpu_layers -1 \
-  --chat_format chatml \
-  > /tmp/llama.log 2>&1 &
-```
-
-## 1. Create a Colab Notebook
-
-Open [colab.research.google.com](https://colab.research.google.com/) and create a new notebook, or use `colab/demo.ipynb`.
-
-## 2. Clone the Repository
-
-```python
-!git clone https://github.com/pixelrahulnotfound/mini-ps.git
-%cd mini-ps
-```
-
-For a private repository, upload a ZIP instead of putting a GitHub token in a
-notebook cell:
-
-```python
-from google.colab import files
-uploaded = files.upload()  # choose mini-ps.zip
-```
-
-```python
-!unzip -q mini-ps.zip -d /content/
-%cd /content/mini-ps
-```
-
-If the ZIP extracts into a different folder name, run `!ls /content` and change
-the `%cd` path.
-
-## 3. Install the Python dependencies
-
-## 3. Install Dependencies
-
-```python
-!pip install -q -r requirements.txt
-!CMAKE_ARGS="-DGGML_CUDA=OFF" pip install -q "llama-cpp-python[server]"
-```
-
-## 4. Download Model
+Download the single-file Qwen 2.5 7B GGUF:
 
 ```python
 from huggingface_hub import hf_hub_download
 
-MODEL_DIR = "/content/mini-ps/models"
-MODEL_FILE = "qwen2.5-7b-instruct-q4_k_m.gguf"
-
-hf_hub_download(
-    repo_id="Qwen/Qwen2.5-7B-Instruct-GGUF",
-    filename=MODEL_FILE,
-    local_dir=MODEL_DIR,
+model_path = hf_hub_download(
+    repo_id="bartowski/Qwen2.5-7B-Instruct-GGUF",
+    filename="Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    local_dir="/content/models"
 )
+print("Downloaded model to:", model_path)
 ```
 
-## 5. Configure Environment
+---
+
+## 4. Start Model Server & Cloudflare Tunnel
 
 ```python
-import os
+import time
 
-os.environ["MINIPS_LLM_BASE_URL"] = "http://127.0.0.1:8080/v1"
-os.environ["MINIPS_LLM_API_KEY"] = "local"
-os.environ["MINIPS_LLM_MODEL"] = "qwen2.5-7b-instruct"
-os.environ["MINIPS_MCP_URL"] = "http://127.0.0.1:3000/sse"
-os.environ["MINIPS_MAX_STEPS"] = "10"
-os.environ["MINIPS_ENABLE_LIVE_DATA"] = "false"
-```
-
-## 6. Start llama.cpp Server
-
-```python
-MODEL_PATH = "/content/mini-ps/models/qwen2.5-7b-instruct-q4_k_m.gguf"
-
+# Start llama.cpp on GPU (port 5000)
 !nohup python -m llama_cpp.server \
-  --model "$MODEL_PATH" \
-  --host 127.0.0.1 \
-  --port 8080 \
+  --model /content/models/Qwen2.5-7B-Instruct-Q4_K_M.gguf \
   --model_alias qwen2.5-7b-instruct \
+  --host 0.0.0.0 \
+  --port 5000 \
   --n_ctx 4096 \
-  --n_gpu_layers 0 \
-  --chat_format chatml \
-  > /tmp/llama.log 2>&1 &
+  --n_gpu_layers -1 \
+  --chat_format chatml > /tmp/llama.log 2>&1 &
+
+# Start tunnel to port 5000
+!nohup cloudflared tunnel --url http://localhost:5000 > /tmp/tunnel.log 2>&1 &
+
+time.sleep(10)
+!grep -o 'https://.*\.trycloudflare\.com' /tmp/tunnel.log
 ```
 
-Wait and verify server health:
+---
 
-```python
-import time, requests
+## 5. Connect from Your Laptop
 
-for attempt in range(30):
-    try:
-        response = requests.get("http://127.0.0.1:8080/v1/models", timeout=3)
-        if response.ok:
-            print("llama.cpp is ready")
-            break
-    except requests.RequestException:
-        time.sleep(5)
-```
+1. Copy the `.trycloudflare.com` URL printed in Colab.
+2. On your laptop, put it in `.env`:
+   ```dotenv
+   MINIPS_LLM_BASE_URL=https://your-url.trycloudflare.com/v1
+   MINIPS_LLM_API_KEY=local
+   MINIPS_LLM_MODEL=qwen2.5-7b-instruct
+   MINIPS_MCP_URL=http://localhost:3000/sse
+   ```
+3. Start your local MCP server:
+   ```bash
+   python -m mcp_server.server
+   ```
+4. Run the CLI on your laptop:
+   ```bash
+   python -m cli.main
+   ```
 
-## 7. Start the MCP Server
+---
 
-```python
-!nohup python -m mcp_server.server > /tmp/mcp.log 2>&1 &
-```
+## 6. (Alternative) Run Everything inside Colab
 
-Verify MCP tools:
+If you want to run the travel planner entirely inside Colab without a local laptop:
 
-```python
-import asyncio
-from agent.mcp_client import MCPClient
+1. Clone the repo and install project requirements:
+   ```python
+   !git clone https://github.com/pixelrahulnotfound/mini-ps.git
+   %cd mini-ps
+   !pip install -q -r requirements.txt
+   ```
+2. Start the MCP server:
+   ```python
+   !nohup python -m mcp_server.server > /tmp/mcp.log 2>&1 &
+   ```
+3. Run the CLI directly:
+   ```python
+   import os
+   os.environ["MINIPS_LLM_BASE_URL"] = "http://localhost:5000/v1"
+   os.environ["MINIPS_MCP_URL"] = "http://localhost:3000/sse"
 
-async def check_mcp():
-    async with MCPClient("http://127.0.0.1:3000/sse") as client:
-        tools = await client.list_tools()
-        print([tool.name for tool in tools])
-
-asyncio.run(check_mcp())
-```
-
-## 8. Run Travel Planner
-
-```python
-!python -m cli.main --query "Plan a 5-day trip to Goa for 3 people from Hyderabad in December. Total budget: 75,000 INR. Interests: beaches, seafood, nightlife."
-```
-
-## 9. Stopping Processes
-
-```python
-!pkill -f "llama_cpp.server" || true
-!pkill -f "mcp_server.server" || true
-```
+   !python -m cli.main --query "Plan a 5-day trip to Goa for 3 people from Hyderabad in December with a budget of 75000 INR."
+   ```
