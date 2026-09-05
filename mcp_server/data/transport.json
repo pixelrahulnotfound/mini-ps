@@ -1,0 +1,54 @@
+{
+  "hyderabad->goa": {
+    "destination": "Goa",
+    "origin": "Hyderabad",
+    "flight": {"cost_per_person": 5500, "duration": "1h 20m", "notes": "Usually the fastest option."},
+    "train": {"cost_per_person": 1200, "duration": "14–16h", "notes": "Check Vasco da Gama / Madgaon services."},
+    "bus": {"cost_per_person": 1800, "duration": "15–18h", "notes": "Overnight sleeper services vary by date."},
+    "road": {"cost_per_person": 2600, "duration": "12–14h", "notes": "Best split across a private vehicle."},
+    "road_distance_km": 660
+  },
+  "delhi->goa": {
+    "destination": "Goa",
+    "origin": "Delhi",
+    "flight": {"cost_per_person": 7500, "duration": "2h 40m", "notes": "Best for a short trip."},
+    "train": {"cost_per_person": 2200, "duration": "28–34h", "notes": "Long journey; reserve early."},
+    "bus": {"cost_per_person": 3000, "duration": "32–40h", "notes": "Not recommended for a short break."},
+    "road": {"cost_per_person": 4500, "duration": "30–36h", "notes": "Useful only for a multi-stop road trip."},
+    "road_distance_km": 1900
+  },
+  "delhi->jaipur": {
+    "destination": "Jaipur",
+    "origin": "Delhi",
+    "flight": {"cost_per_person": 4500, "duration": "1h", "notes": "Usually unnecessary for this route."},
+    "train": {"cost_per_person": 700, "duration": "4–5h", "notes": "Fast trains are convenient."},
+    "bus": {"cost_per_person": 500, "duration": "5–6h", "notes": "Frequent services."},
+    "road": {"cost_per_person": 900, "duration": "5–6h", "notes": "Flexible for groups."},
+    "road_distance_km": 280
+  },
+  "delhi->manali": {
+    "destination": "Manali",
+    "origin": "Delhi",
+    "flight": {"cost_per_person": 6500, "duration": "1h 25m plus road transfer", "notes": "Bhuntar flights are limited."},
+    "train": {"cost_per_person": 1800, "duration": "5h to Chandigarh plus road", "notes": "Use rail to Chandigarh and continue by road."},
+    "bus": {"cost_per_person": 1400, "duration": "12–14h", "notes": "Volvo overnight buses are practical."},
+    "road": {"cost_per_person": 2600, "duration": "11–13h", "notes": "Good for groups splitting a cab."},
+    "road_distance_km": 540
+  },
+  "delhi->ladakh": {
+    "destination": "Ladakh",
+    "origin": "Delhi",
+    "flight": {"cost_per_person": 8000, "duration": "1h 20m", "notes": "The practical year-round option when flights operate."},
+    "train": {"cost_per_person": 3000, "duration": "not direct", "notes": "Rail requires a long road connection."},
+    "bus": {"cost_per_person": 2500, "duration": "30–36h", "notes": "Seasonal road services only."},
+    "road": {"cost_per_person": 5000, "duration": "2–3 days", "notes": "Use only when the Manali/Srinagar highway is open."},
+    "road_distance_km": 1020
+  },
+  "default": {
+    "flight": {"cost_per_person": 7000, "duration": "varies", "notes": "Planning estimate; confirm live fares."},
+    "train": {"cost_per_person": 1800, "duration": "varies", "notes": "Planning estimate; check availability."},
+    "bus": {"cost_per_person": 1600, "duration": "varies", "notes": "Planning estimate."},
+    "road": {"cost_per_person": 2500, "duration": "varies", "notes": "Planning estimate for shared road travel."},
+    "road_distance_km": null
+  }
+}

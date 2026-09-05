@@ -1,0 +1,162 @@
+{
+  "goa": {
+    "name": "Goa",
+    "aliases": ["goa", "panaji", "panjim"],
+    "country": "India",
+    "state": "Goa",
+    "description": "A compact coastal state known for beaches, seafood, Portuguese heritage, and a lively nightlife scene.",
+    "known_for": ["beaches", "seafood", "Portuguese heritage", "nightlife", "water sports"],
+    "zones": [
+      {"name": "North Goa", "character": "busy beaches, markets, nightlife"},
+      {"name": "Panaji and Old Goa", "character": "riverfront, food, Portuguese and colonial heritage"},
+      {"name": "South Goa", "character": "quieter beaches, scenic villages, slower pace"}
+    ],
+    "airport": "Manohar International Airport (Mopa) or Dabolim Airport",
+    "railhead": "Madgaon or Vasco da Gama",
+    "recommended_duration": "4–6 days",
+    "local_transport_daily": 900,
+    "food_per_person_per_day": {"budget": 450, "mid-range": 850, "luxury": 1800},
+    "accommodation_per_night": {"budget": 1800, "mid-range": 3600, "luxury": 9000},
+    "seasons": {
+      "January": {"season": "peak", "temperature": "23–32°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Hotels are priced above shoulder-season levels."},
+      "February": {"season": "peak", "temperature": "23–32°C", "rain": "low", "crowd": "medium-high", "verdict": "recommended", "impact": "Good weather with moderate peak pricing."},
+      "March": {"season": "shoulder", "temperature": "25–34°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Good value before the hottest months."},
+      "April": {"season": "shoulder", "temperature": "27–35°C", "rain": "low", "crowd": "low", "verdict": "acceptable", "impact": "Lower prices, but afternoons are hot."},
+      "May": {"season": "off-season", "temperature": "28–35°C", "rain": "high", "crowd": "low", "verdict": "acceptable", "impact": "Discounts are common; plan around heat and showers."},
+      "June": {"season": "off-season", "temperature": "25–31°C", "rain": "very high", "crowd": "low", "verdict": "inadvisable", "impact": "Monsoon can disrupt beaches and outdoor plans."},
+      "July": {"season": "off-season", "temperature": "24–30°C", "rain": "very high", "crowd": "low", "verdict": "inadvisable", "impact": "Heavy monsoon; many water activities are unavailable."},
+      "August": {"season": "off-season", "temperature": "24–30°C", "rain": "very high", "crowd": "low", "verdict": "inadvisable", "impact": "Heavy monsoon and wet-road risk."},
+      "September": {"season": "shoulder", "temperature": "24–31°C", "rain": "high", "crowd": "low", "verdict": "acceptable", "impact": "Green landscapes and low prices, with variable showers."},
+      "October": {"season": "shoulder", "temperature": "25–32°C", "rain": "medium", "crowd": "medium", "verdict": "recommended", "impact": "Season restarts; book popular weekends early."},
+      "November": {"season": "peak", "temperature": "24–32°C", "rain": "low", "crowd": "medium-high", "verdict": "recommended", "impact": "Prices rise as the dry season begins."},
+      "December": {"season": "peak", "temperature": "24–32°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Christmas and festival weeks can add 20–30% to accommodation."
+      }
+    },
+    "festivals": {
+      "December": ["Christmas celebrations", "Sunburn Festival (dates vary)"],
+      "February": ["Carnival celebrations"],
+      "November": ["International Film Festival of India (near Panaji, dates vary)"]
+    },
+    "activities": [
+      {"name": "Baga Beach", "zone": "North Goa", "categories": ["beach"], "description": "Lively beach for swimming, shacks, and sunset energy.", "entry_fee": 0, "cost_per_person": 0, "time_needed": "half-day"},
+      {"name": "Palolem Beach", "zone": "South Goa", "categories": ["beach", "family"], "description": "A scenic crescent beach with a calmer, more relaxed atmosphere.", "entry_fee": 0, "cost_per_person": 0, "time_needed": "half-day"},
+      {"name": "Old Goa churches", "zone": "Panaji and Old Goa", "categories": ["history", "art"], "description": "Walk through UNESCO-listed basilicas and colonial-era landmarks.", "entry_fee": 50, "cost_per_person": 50, "time_needed": "half-day"},
+      {"name": "Dudhsagar Falls day trip", "zone": "East Goa", "categories": ["adventure", "wildlife"], "description": "A full-day waterfall and forest excursion.", "entry_fee": 800, "cost_per_person": 800, "time_needed": "full-day"},
+      {"name": "Seafood thali and local food walk", "zone": "Panaji and Old Goa", "categories": ["food"], "description": "Try fish thali, xacuti, bebinca, and local market snacks.", "entry_fee": 0, "cost_per_person": 700, "time_needed": "half-day"},
+      {"name": "Tito's Lane", "zone": "North Goa", "categories": ["nightlife"], "description": "A concentrated nightlife strip with clubs and late-night food.", "entry_fee": 1500, "cost_per_person": 1500, "time_needed": "evening"},
+      {"name": "Anjuna flea market", "zone": "North Goa", "categories": ["shopping"], "description": "Browse crafts, clothes, souvenirs, and casual food stalls.", "entry_fee": 0, "cost_per_person": 500, "time_needed": "half-day"},
+      {"name": "Fort Aguada", "zone": "North Goa", "categories": ["history", "family"], "description": "A historic coastal fort with broad sea views.", "entry_fee": 50, "cost_per_person": 50, "time_needed": "2 hours"}
+    ]
+  },
+  "jaipur": {
+    "name": "Jaipur",
+    "aliases": ["jaipur", "pink city"],
+    "country": "India",
+    "state": "Rajasthan",
+    "description": "The Pink City, combining Rajput forts, palaces, craft markets, and a rich food culture.",
+    "known_for": ["history", "forts", "palaces", "shopping", "food"],
+    "zones": [{"name": "Old City", "character": "palaces, bazaars, street food"}, {"name": "Amber", "character": "forts and hill views"}, {"name": "Civil Lines", "character": "restaurants and modern stays"}],
+    "airport": "Jaipur International Airport",
+    "railhead": "Jaipur Junction",
+    "recommended_duration": "3–4 days",
+    "local_transport_daily": 700,
+    "food_per_person_per_day": {"budget": 350, "mid-range": 700, "luxury": 1600},
+    "accommodation_per_night": {"budget": 1600, "mid-range": 3200, "luxury": 8500},
+    "seasons": {
+      "January": {"season": "peak", "temperature": "8–22°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Cool days and higher demand."},
+      "February": {"season": "peak", "temperature": "12–26°C", "rain": "low", "crowd": "medium-high", "verdict": "recommended", "impact": "Comfortable sightseeing weather."},
+      "March": {"season": "shoulder", "temperature": "17–31°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Warm afternoons, good value."},
+      "April": {"season": "off-season", "temperature": "23–37°C", "rain": "low", "crowd": "low", "verdict": "acceptable", "impact": "Plan forts early in the day."},
+      "May": {"season": "off-season", "temperature": "28–41°C", "rain": "low", "crowd": "low", "verdict": "inadvisable", "impact": "Very hot; indoor breaks are essential."},
+      "June": {"season": "off-season", "temperature": "28–39°C", "rain": "medium", "crowd": "low", "verdict": "acceptable", "impact": "Hot with occasional pre-monsoon storms."},
+      "July": {"season": "shoulder", "temperature": "26–35°C", "rain": "medium", "crowd": "low", "verdict": "acceptable", "impact": "Green surroundings and lower prices."},
+      "August": {"season": "shoulder", "temperature": "25–34°C", "rain": "medium", "crowd": "low", "verdict": "acceptable", "impact": "Showers can interrupt open-air visits."},
+      "September": {"season": "shoulder", "temperature": "24–34°C", "rain": "medium", "crowd": "medium", "verdict": "acceptable", "impact": "Improving weather and fair pricing."},
+      "October": {"season": "peak", "temperature": "20–34°C", "rain": "low", "crowd": "medium-high", "verdict": "recommended", "impact": "Festival season starts; book ahead."},
+      "November": {"season": "peak", "temperature": "13–29°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Excellent weather and high demand."},
+      "December": {"season": "peak", "temperature": "8–23°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Excellent weather; holiday demand raises prices."}
+    },
+    "festivals": {"March": ["Holi celebrations"], "October": ["Navratri events"], "November": ["Diwali celebrations"]},
+    "activities": [
+      {"name": "Amber Fort", "zone": "Amber", "categories": ["history", "art", "family"], "description": "A hill fort with courtyards, halls, and views across the Aravalli hills.", "entry_fee": 200, "cost_per_person": 200, "time_needed": "half-day"},
+      {"name": "City Palace", "zone": "Old City", "categories": ["history", "art"], "description": "Royal courtyards, galleries, and textile collections in the old city.", "entry_fee": 300, "cost_per_person": 300, "time_needed": "half-day"},
+      {"name": "Hawa Mahal and bazaar walk", "zone": "Old City", "categories": ["history", "shopping", "food"], "description": "A photogenic facade followed by markets and snack stops.", "entry_fee": 200, "cost_per_person": 350, "time_needed": "half-day"},
+      {"name": "Rajasthani thali dinner", "zone": "Civil Lines", "categories": ["food"], "description": "A generous tasting meal of regional dishes and sweets.", "entry_fee": 0, "cost_per_person": 700, "time_needed": "evening"},
+      {"name": "Nahargarh sunset", "zone": "Amber", "categories": ["history", "family"], "description": "Sunset views over the Pink City from the ridge.", "entry_fee": 100, "cost_per_person": 100, "time_needed": "2 hours"}
+    ]
+  },
+  "manali": {
+    "name": "Manali",
+    "aliases": ["manali", "kullu manali"],
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "description": "A mountain base for riverside walks, high passes, cafes, snow, and adventure activities.",
+    "known_for": ["mountains", "adventure", "trekking", "snow", "cafes"],
+    "zones": [{"name": "Old Manali", "character": "cafes, riverside walks, relaxed stays"}, {"name": "Solang Valley", "character": "adventure and snow activities"}, {"name": "Naggar", "character": "villages, art, and quieter mountain views"}],
+    "airport": "Kullu–Manali Airport (Bhuntar)",
+    "railhead": "Joginder Nagar (limited service); Chandigarh is the practical rail gateway",
+    "recommended_duration": "4–6 days",
+    "local_transport_daily": 1100,
+    "food_per_person_per_day": {"budget": 500, "mid-range": 900, "luxury": 1900},
+    "accommodation_per_night": {"budget": 2000, "mid-range": 4200, "luxury": 10000},
+    "seasons": {
+      "January": {"season": "peak", "temperature": "-2–10°C", "rain": "snow possible", "crowd": "high", "verdict": "recommended", "impact": "Snow demand raises prices."},
+      "February": {"season": "peak", "temperature": "0–12°C", "rain": "snow possible", "crowd": "medium", "verdict": "recommended", "impact": "Snow activities may be available."},
+      "March": {"season": "shoulder", "temperature": "5–18°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Good value and improving road access."},
+      "April": {"season": "shoulder", "temperature": "8–22°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Comfortable valley weather."},
+      "May": {"season": "peak", "temperature": "12–27°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Summer holiday demand is high."},
+      "June": {"season": "peak", "temperature": "15–29°C", "rain": "medium", "crowd": "high", "verdict": "recommended", "impact": "Book transport and stays in advance."},
+      "July": {"season": "off-season", "temperature": "16–26°C", "rain": "high", "crowd": "low", "verdict": "inadvisable", "impact": "Landslide and road-delay risk."},
+      "August": {"season": "off-season", "temperature": "15–25°C", "rain": "high", "crowd": "low", "verdict": "inadvisable", "impact": "Monsoon road conditions can be difficult."},
+      "September": {"season": "shoulder", "temperature": "12–24°C", "rain": "medium", "crowd": "low", "verdict": "acceptable", "impact": "Quieter, with some residual rain risk."},
+      "October": {"season": "peak", "temperature": "8–22°C", "rain": "low", "crowd": "medium-high", "verdict": "recommended", "impact": "Clear mountain views and rising demand."},
+      "November": {"season": "shoulder", "temperature": "2–16°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Cold but good value before snow season."},
+      "December": {"season": "peak", "temperature": "-2–10°C", "rain": "snow possible", "crowd": "high", "verdict": "recommended", "impact": "Holiday and snow pricing applies."}
+    },
+    "festivals": {"January": ["Winter Carnival (dates vary)"], "December": ["Christmas and New Year mountain season"]},
+    "activities": [
+      {"name": "Solang Valley", "zone": "Solang Valley", "categories": ["adventure", "family"], "description": "Paragliding, cable cars, and seasonal snow activities.", "entry_fee": 0, "cost_per_person": 1200, "time_needed": "full-day"},
+      {"name": "Old Manali cafe and river walk", "zone": "Old Manali", "categories": ["food", "family"], "description": "An easy first-day wander through cafes and cedar-lined paths.", "entry_fee": 0, "cost_per_person": 500, "time_needed": "half-day"},
+      {"name": "Naggar Castle and art trail", "zone": "Naggar", "categories": ["history", "art"], "description": "A quieter heritage and art outing above the valley.", "entry_fee": 100, "cost_per_person": 450, "time_needed": "half-day"},
+      {"name": "Beas riverside picnic", "zone": "Old Manali", "categories": ["family", "adventure"], "description": "A low-effort scenic break by the river.", "entry_fee": 0, "cost_per_person": 250, "time_needed": "2 hours"},
+      {"name": "Short forest trek", "zone": "Old Manali", "categories": ["trekking", "adventure"], "description": "A guided half-day walk through cedar forest.", "entry_fee": 0, "cost_per_person": 700, "time_needed": "half-day"}
+    ]
+  },
+  "ladakh": {
+    "name": "Ladakh",
+    "aliases": ["ladakh", "leh", "leh ladakh"],
+    "country": "India",
+    "state": "Ladakh",
+    "description": "A high-altitude Himalayan region of monasteries, stark landscapes, mountain passes, and adventure roads.",
+    "known_for": ["mountains", "adventure", "monasteries", "trekking", "wildlife"],
+    "zones": [{"name": "Leh", "character": "acclimatisation, markets, monasteries"}, {"name": "Nubra Valley", "character": "sand dunes, villages, high passes"}, {"name": "Pangong", "character": "high-altitude lake and wide landscapes"}],
+    "airport": "Kushok Bakula Rimpochee Airport, Leh",
+    "railhead": "No direct railhead; fly to Leh or connect by road from Srinagar/Manali",
+    "recommended_duration": "6–9 days",
+    "local_transport_daily": 1800,
+    "food_per_person_per_day": {"budget": 600, "mid-range": 1100, "luxury": 2500},
+    "accommodation_per_night": {"budget": 2200, "mid-range": 4800, "luxury": 12000},
+    "seasons": {
+      "January": {"season": "off-season", "temperature": "-15–2°C", "rain": "snow", "crowd": "low", "verdict": "inadvisable", "impact": "Extreme cold; many routes and stays are closed."},
+      "February": {"season": "off-season", "temperature": "-12–5°C", "rain": "snow", "crowd": "low", "verdict": "inadvisable", "impact": "Extreme cold and limited road access."},
+      "March": {"season": "off-season", "temperature": "-5–12°C", "rain": "low", "crowd": "low", "verdict": "inadvisable", "impact": "High passes may remain inaccessible."},
+      "April": {"season": "shoulder", "temperature": "0–16°C", "rain": "low", "crowd": "low", "verdict": "acceptable", "impact": "Cold shoulder season with limited routes."},
+      "May": {"season": "shoulder", "temperature": "5–22°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Road season begins; check pass openings."},
+      "June": {"season": "peak", "temperature": "10–27°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Popular road-trip season; book ahead."},
+      "July": {"season": "peak", "temperature": "12–29°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Peak travel period despite limited rain."},
+      "August": {"season": "peak", "temperature": "12–28°C", "rain": "low", "crowd": "high", "verdict": "recommended", "impact": "Peak season; high-altitude precautions matter."},
+      "September": {"season": "shoulder", "temperature": "7–24°C", "rain": "low", "crowd": "medium", "verdict": "recommended", "impact": "Clear weather with better availability."},
+      "October": {"season": "shoulder", "temperature": "0–18°C", "rain": "low", "crowd": "low", "verdict": "acceptable", "impact": "Cold nights and possible route closures."},
+      "November": {"season": "off-season", "temperature": "-8–10°C", "rain": "snow possible", "crowd": "low", "verdict": "inadvisable", "impact": "Winter access becomes difficult."},
+      "December": {"season": "off-season", "temperature": "-15–2°C", "rain": "snow", "crowd": "low", "verdict": "inadvisable", "impact": "Most high-altitude routes are closed."}
+    },
+    "festivals": {"June": ["Hemis Festival (dates vary)"], "September": ["Ladakh Festival (dates vary)"]},
+    "activities": [
+      {"name": "Leh Palace and old town", "zone": "Leh", "categories": ["history", "art"], "description": "A gentle acclimatisation outing with palace and market views.", "entry_fee": 300, "cost_per_person": 300, "time_needed": "half-day"},
+      {"name": "Thiksey and Hemis monasteries", "zone": "Leh", "categories": ["history", "art", "family"], "description": "A monastery circuit across the Indus valley.", "entry_fee": 200, "cost_per_person": 500, "time_needed": "full-day"},
+      {"name": "Nubra Valley excursion", "zone": "Nubra Valley", "categories": ["adventure", "wildlife"], "description": "Cross Khardung La for dunes, villages, and valley landscapes.", "entry_fee": 0, "cost_per_person": 2500, "time_needed": "2 days"},
+      {"name": "Pangong Lake", "zone": "Pangong", "categories": ["adventure", "wildlife"], "description": "A high-altitude lake excursion with a long road day.", "entry_fee": 0, "cost_per_person": 3000, "time_needed": "2 days"},
+      {"name": "Acclimatisation walk", "zone": "Leh", "categories": ["family", "trekking"], "description": "A deliberately easy day to adapt to altitude.", "entry_fee": 0, "cost_per_person": 200, "time_needed": "half-day"}
+    ]
+  }
+}

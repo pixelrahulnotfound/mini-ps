@@ -1,0 +1,70 @@
+{
+  "goa": {
+    "budget": [
+      {"name": "Zostel Goa (Baga)", "type": "hostel", "price_per_night": 800, "location": "North Goa", "amenities": ["shared kitchen", "social common room"], "booking_tip": "Book 4–6 weeks ahead for December."},
+      {"name": "The Postcard Coco Grove", "type": "budget guesthouse", "price_per_night": 1400, "location": "South Goa", "amenities": ["garden", "breakfast"], "booking_tip": "Check distance to the beach before booking."},
+      {"name": "Anjuna guesthouse", "type": "simple private room", "price_per_night": 2200, "location": "Anjuna", "amenities": ["private room", "scooter access"], "booking_tip": "Good for a small group splitting a room."}
+    ],
+    "mid-range": [
+      {"name": "Candolim boutique stay", "type": "boutique hotel", "price_per_night": 3600, "location": "Candolim", "amenities": ["pool", "breakfast", "Wi-Fi"], "booking_tip": "Choose a refundable rate in peak season."},
+      {"name": "Panaji heritage guesthouse", "type": "heritage guesthouse", "price_per_night": 4000, "location": "Panaji", "amenities": ["breakfast", "heritage setting"], "booking_tip": "Best for food and Old Goa access."},
+      {"name": "Palolem beach resort", "type": "beach resort", "price_per_night": 4500, "location": "South Goa", "amenities": ["beach access", "restaurant"], "booking_tip": "Compare monsoon and peak-season rates."}
+    ],
+    "luxury": [
+      {"name": "North Goa design resort", "type": "design resort", "price_per_night": 9000, "location": "Assagao", "amenities": ["pool", "restaurant", "spa"], "booking_tip": "Reserve airport transfers with the property."},
+      {"name": "South Goa beach resort", "type": "full-service resort", "price_per_night": 12000, "location": "Cavelossim", "amenities": ["private beach", "pool", "spa"], "booking_tip": "Look for meal-inclusive packages."},
+      {"name": "Panaji riverside hotel", "type": "city hotel", "price_per_night": 10500, "location": "Panaji", "amenities": ["river view", "pool", "breakfast"], "booking_tip": "Useful for a mixed heritage and food itinerary."}
+    ]
+  },
+  "jaipur": {
+    "budget": [
+      {"name": "Old City haveli hostel", "type": "hostel", "price_per_night": 700, "location": "Old City", "amenities": ["rooftop", "common room"], "booking_tip": "Choose a room away from the busiest market lane."},
+      {"name": "Civil Lines guesthouse", "type": "guesthouse", "price_per_night": 1600, "location": "Civil Lines", "amenities": ["breakfast", "courtyard"], "booking_tip": "Confirm air-conditioning for warmer months."},
+      {"name": "Amber family homestay", "type": "homestay", "price_per_night": 1900, "location": "Amber", "amenities": ["home-cooked meals", "parking"], "booking_tip": "Good for early fort visits."}
+    ],
+    "mid-range": [
+      {"name": "Pink City boutique haveli", "type": "boutique hotel", "price_per_night": 3200, "location": "Old City edge", "amenities": ["courtyard", "breakfast", "Wi-Fi"], "booking_tip": "Check vehicle access in the old city."},
+      {"name": "Civil Lines art hotel", "type": "design hotel", "price_per_night": 3900, "location": "Civil Lines", "amenities": ["pool", "restaurant"], "booking_tip": "A calmer base after sightseeing."},
+      {"name": "Amber view hotel", "type": "heritage hotel", "price_per_night": 4200, "location": "Amber", "amenities": ["fort views", "restaurant"], "booking_tip": "Best for an early Amber Fort start."}
+    ],
+    "luxury": [
+      {"name": "Palace-style retreat", "type": "heritage luxury hotel", "price_per_night": 12000, "location": "Civil Lines", "amenities": ["pool", "spa", "fine dining"], "booking_tip": "Ask about palace tour packages."},
+      {"name": "Amber fort-view resort", "type": "luxury resort", "price_per_night": 15000, "location": "Amber", "amenities": ["views", "pool", "restaurant"], "booking_tip": "Arrange transfers for evening outings."},
+      {"name": "Old City grand haveli", "type": "heritage haveli", "price_per_night": 10000, "location": "Old City", "amenities": ["courtyard", "restaurant", "concierge"], "booking_tip": "Verify parking and luggage access."}
+    ]
+  },
+  "manali": {
+    "budget": [
+      {"name": "Old Manali backpacker lodge", "type": "hostel", "price_per_night": 900, "location": "Old Manali", "amenities": ["common room", "cafe"], "booking_tip": "Carry layers; budget rooms vary in heating."},
+      {"name": "Riverside homestay", "type": "homestay", "price_per_night": 2000, "location": "Old Manali", "amenities": ["breakfast", "river access"], "booking_tip": "Ask about road access in snow."},
+      {"name": "Naggar guesthouse", "type": "guesthouse", "price_per_night": 2200, "location": "Naggar", "amenities": ["mountain view", "kitchen"], "booking_tip": "Best when you want a quieter base."}
+    ],
+    "mid-range": [
+      {"name": "Old Manali cedar hotel", "type": "boutique hotel", "price_per_night": 4200, "location": "Old Manali", "amenities": ["breakfast", "heating", "cafe"], "booking_tip": "Confirm heating and hot-water hours."},
+      {"name": "Solang valley lodge", "type": "mountain lodge", "price_per_night": 5000, "location": "Solang Valley", "amenities": ["views", "restaurant", "parking"], "booking_tip": "Useful for early adventure starts."},
+      {"name": "Naggar art retreat", "type": "heritage guesthouse", "price_per_night": 4600, "location": "Naggar", "amenities": ["garden", "restaurant"], "booking_tip": "Plan taxi costs when staying outside town."}
+    ],
+    "luxury": [
+      {"name": "Riverfront mountain resort", "type": "resort", "price_per_night": 10000, "location": "Manali", "amenities": ["spa", "pool", "restaurant"], "booking_tip": "Choose a valley-facing room."},
+      {"name": "Solang alpine retreat", "type": "luxury lodge", "price_per_night": 13000, "location": "Solang Valley", "amenities": ["views", "spa", "chauffeur"], "booking_tip": "Verify winter road access."},
+      {"name": "Naggar heritage estate", "type": "heritage estate", "price_per_night": 11500, "location": "Naggar", "amenities": ["garden", "fine dining", "fireplace"], "booking_tip": "Ask for a guided village walk."}
+    ]
+  },
+  "ladakh": {
+    "budget": [
+      {"name": "Leh family-run guesthouse", "type": "guesthouse", "price_per_night": 1100, "location": "Leh", "amenities": ["breakfast", "hot water"], "booking_tip": "Keep the first day intentionally light for acclimatisation."},
+      {"name": "Leh hostel", "type": "hostel", "price_per_night": 900, "location": "Leh", "amenities": ["common room", "shared kitchen"], "booking_tip": "Confirm heating and season opening dates."},
+      {"name": "Nubra homestay", "type": "homestay", "price_per_night": 1600, "location": "Nubra Valley", "amenities": ["meals", "local host"], "booking_tip": "Ask whether transport is included."}
+    ],
+    "mid-range": [
+      {"name": "Leh courtyard hotel", "type": "boutique hotel", "price_per_night": 4800, "location": "Leh", "amenities": ["breakfast", "heating", "backup power"], "booking_tip": "Prioritise reliable hot water and power backup."},
+      {"name": "Nubra valley camp", "type": "tented camp", "price_per_night": 5200, "location": "Nubra Valley", "amenities": ["meals", "transfers"], "booking_tip": "Confirm bathroom and heating arrangements."},
+      {"name": "Pangong lakeside camp", "type": "lakeside camp", "price_per_night": 6000, "location": "Pangong", "amenities": ["meals", "lake view"], "booking_tip": "Pack for cold nights even in summer."}
+    ],
+    "luxury": [
+      {"name": "Leh mountain hotel", "type": "full-service hotel", "price_per_night": 12000, "location": "Leh", "amenities": ["restaurant", "spa", "backup power"], "booking_tip": "Build a rest day into the itinerary."},
+      {"name": "Nubra luxury camp", "type": "glamping camp", "price_per_night": 15000, "location": "Nubra Valley", "amenities": ["private tent", "meals", "guide"], "booking_tip": "Check the operating season before paying."},
+      {"name": "Pangong premium camp", "type": "premium lakeside camp", "price_per_night": 16000, "location": "Pangong", "amenities": ["private tent", "meals", "lake view"], "booking_tip": "Pre-arrange permits and transfers."}
+    ]
+  }
+}
