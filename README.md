@@ -32,6 +32,8 @@ CLI ──> Agent Loop ──> LLM (OpenAI-compatible)
 ### 1. Setup Environment
 
 ```bash
+git clone https://github.com/pixelrahulnotfound/mini-ps.git
+cd mini-ps
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt

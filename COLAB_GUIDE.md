@@ -55,7 +55,7 @@ Open [colab.research.google.com](https://colab.research.google.com/) and create 
 ## 2. Clone the Repository
 
 ```python
-!git clone https://github.com/YOUR-USERNAME/mini-ps.git
+!git clone https://github.com/pixelrahulnotfound/mini-ps.git
 %cd mini-ps
 ```
 
